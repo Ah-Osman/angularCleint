@@ -1,0 +1,37 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Stock Id</th>
+          <th scope="col">stock Name</th>
+          <th scope="col">Items count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of stocks">
+          <td>{{ stock.id }}</td>
+          <td>{{ stock.stockName }}</td>
+          <td>{{ stock.items.length }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Stock Id</th>
+          <th scope="col">product Name</th>
+          <th scope="col">amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productStock of productStocks">
+          <td>{{ productStock.stockId }}</td>
+          <td>{{ productStock.productName }}</td>
+          <td>{{ productStock.amount }}</td>
+          <td><button ng-click="buyProduct({{productStock.productName}})">Buy</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
